@@ -106,11 +106,49 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Archiving\TarballReader.cs" />
+    <Compile Include="Controller\DataController.cs" />
+    <Compile Include="Controller\ControllerException.cs" />
+    <Compile Include="Domain\AppInstallInfo.cs" />
     <Compile Include="Domain\AppSettings.cs" />
-    <Compile Include="IOHelper.cs" />
+    <Compile Include="Domain\Sound.cs" />
+    <Compile Include="Recorder.cs" />
+    <Compile Include="UI\DrumPlayUI.xaml.cs">
+      <DependentUpon>DrumPlayUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DrumEditUI.xaml.cs">
+      <DependentUpon>DrumEditUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditorPage.xaml.cs">
+      <DependentUpon>EditorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings\LayoutsSettingsControl.xaml.cs">
+      <DependentUpon>LayoutsSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\UIHelper.cs" />
+    <Compile Include="UI\Settings\ExperimentsSettingsControl.xaml.cs">
+      <DependentUpon>ExperimentsSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CommonControls\FileControl.xaml.cs">
+      <DependentUpon>FileControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings\DrumsSettingsControl.xaml.cs">
+      <DependentUpon>DrumsSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings\DrumkitsSettingsControl.xaml.cs">
+      <DependentUpon>DrumkitsSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings\GeneralSettingsControl.xaml.cs">
+      <DependentUpon>GeneralSettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\LogRepository.cs" />
+    <Compile Include="Repository\DataRepository.cs" />
+    <Compile Include="Repository\SoundRepository.cs" />
+    <Compile Include="UI\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\RepositoryException.cs" />
+    <Compile Include="Utils\IOHelper.cs" />
     <Compile Include="Log.cs" />
-    <Compile Include="Managers\DataManager.cs" />
     <Compile Include="Domain\Drum.cs" />
     <Compile Include="Domain\DrumConfig.cs" />
     <Compile Include="Domain\Drumkit.cs" />
@@ -119,26 +157,26 @@
     <Compile Include="Domain\DrumkitLayoutCollection.cs" />
     <Compile Include="Domain\DrumkitLayoutTargetView.cs" />
     <Compile Include="Domain\DrumLayout.cs" />
-    <Compile Include="Managers\DrumsManager.cs" />
-    <Compile Include="Managers\UIManager.cs" />
-    <Compile Include="UI\DrumUI.cs" />
+    <Compile Include="Repository\DrumkitRepository.cs" />
     <Compile Include="UI\LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Recorder.cs" />
-    <Compile Include="Managers\SoundManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoundPool.cs" />
     <Compile Include="Domain\SoundSource.cs" />
+    <Compile Include="UI\Settings\LogControl.xaml.cs">
+      <DependentUpon>LogControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="Assets\ApplicationData.tar" />
+    <Content Include="Features.txt" />
     <None Include="Build\7z.exe" />
     <None Include="Build\ApplicationData\Drumkits\Default\config.xml" />
     <None Include="Build\ApplicationData\Drumkits\Default\drumkit.xml" />
@@ -185,6 +223,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Common\TextButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="UI\DrumPlayUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DrumEditUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\EditorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Settings\LayoutsSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Settings\ExperimentsSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\CommonControls\FileControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Settings\DrumsSettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Settings\DrumkitsSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Settings\GeneralSettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\LoadingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -192,6 +275,10 @@
     <Page Include="UI\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Settings\LogControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -204,7 +291,12 @@
       <HintPath>..\..\..\..\WebDownloads\SharpDX242\Bin\Signed-winrt\SharpDX.XAudio2.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Tarball\Tarball.csproj">
+      <Project>{5cb567d7-572e-4bae-802f-7e3f62cddf64}</Project>
+      <Name>Tarball</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
   </PropertyGroup>

@@ -17,7 +17,7 @@ namespace DrumKit
         public DrumkitLayoutTargetView TargetView { get; set; }
 
         [XmlElement("targetView")]
-        private string TargetViewSerialize
+        public string TargetViewSerialize
         {
             get
             {
@@ -65,15 +65,36 @@ namespace DrumKit
         [XmlElement("isDefault")]
         public bool IsDefault { get; set; }
 
+        [XmlIgnore()]
+        public Dictionary<string, DrumLayout> Drums { get; set; }
+
         [XmlArray("drums")]
-        public List<DrumLayout> Drums { get; set; }
+        public DrumLayout[] DrumsList
+        {
+            get
+            {
+                List<DrumLayout> layouts = new List<DrumLayout>();
+
+                foreach (var i in this.Drums)
+                    layouts.Add(i.Value);
+
+                return layouts.ToArray();
+            }
+
+            set
+            {
+                foreach (var i in value)
+                    this.Drums.Add(i.TargetId, i);
+            }
+        }
+
 
 
         public DrumkitLayout()
         {
             this.Name = null;
             this.IsDefault = false;
-            this.Drums = new List<DrumLayout>();
+            this.Drums = new Dictionary<string, DrumLayout>();
             this.TargetView = DrumkitLayoutTargetView.All;
         }
     }

@@ -36,8 +36,29 @@ namespace DrumKit
         [XmlElement("volumeR")]
         public double VolumeR { get; set; }
 
-        [XmlElement("vkey")]
+        [XmlIgnore()]
         public Windows.System.VirtualKey Key { get; set; }
+
+        [XmlElement("vkey")]
+        public string KeyString
+        {
+            get {
+                if (Enum.IsDefined(typeof(Windows.System.VirtualKey), this.Key))
+                    return Enum.GetName(typeof(Windows.System.VirtualKey), this.Key);
+
+                return Convert.ToString((int)this.Key);
+            }
+
+            set
+            {
+                Windows.System.VirtualKey key;
+
+                if (Enum.TryParse(value, out key))
+                    this.Key = key;
+
+                else this.Key = (Windows.System.VirtualKey) int.Parse(value);
+            }
+        }
 
         public DrumConfig()
         {

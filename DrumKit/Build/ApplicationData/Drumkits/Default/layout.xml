@@ -2,76 +2,222 @@
 
 <drumkitLayoutCollection>
 
-    <items>
-        <!-- Standard layout - all views -->
-        <drumkitLayout>
-            <name>Standard layout</name>
-            <targetView>Snapped|Landscape|Filled|Portrait</targetView>
-            <isDefault>true</isDefault>
+  <items>
+    <!-- Standard layout - all views -->
+    <drumkitLayout>
+      <name>Standard layout</name>
+      <targetView>All</targetView>
+      <isDefault>true</isDefault>
 
-            <drums>
-                <drumLayout targetId="defaultkick">
-                    <size>.3</size>
-                    <x>.41</x>
-                    <y>.2</y>
-                    <zindex>0</zindex>
-                </drumLayout>
-                <drumLayout targetId="defaultsnare">
-                    <size>.25</size>
-                    <x>.16</x>
-                    <y>.34</y>
-                    <zindex>2</zindex>
-                    <angle>61</angle>
-                </drumLayout>
-                <drumLayout targetId="defaulthitom">
-                    <size>.22</size>
-                    <x>.33</x>
-                    <y>.05</y>
-                    <zindex>1</zindex>
-                    <angle>150</angle>
-                </drumLayout>
-                <drumLayout targetId="defaultlotom">
-                    <size>.22</size>
-                    <x>.55</x>
-                    <y>.05</y>
-                    <zindex>1</zindex>
-                    <angle>150</angle>
-                </drumLayout>
-                <drumLayout targetId="defaultfltom">
-                    <size>.29</size>
-                    <x>.66</x>
-                    <y>.44</y>
-                    <zindex>1</zindex>
-                    <angle>-30</angle>
-                </drumLayout>
-                <drumLayout targetId="defaulthihatcl">
-                    <size>.055</size>
-                    <x>.11</x>
-                    <y>.89</y>
-                    <zindex>3</zindex>
-                </drumLayout>
-                <drumLayout targetId="defaulthihatop">
-                    <size>.21</size>
-                    <x>.03</x>
-                    <y>.55</y>
-                    <zindex>4</zindex>
-                    <angle>80</angle>
-                </drumLayout>
-                <drumLayout targetId="defaultcrash">
-                    <size>.26</size>
-                    <x>.1</x>
-                    <y>.02</y>
-                    <zindex>4</zindex>
-                    <angle>80</angle>
-                </drumLayout>
-                <drumLayout targetId="defaultride">
-                    <size>.25</size>
-                    <x>.72</x>
-                    <y>.04</y>
-                    <zindex>4</zindex>
-                </drumLayout>
-            </drums>
-        </drumkitLayout>
-    </items>
-    
+      <drums>
+        <drumLayout targetId="defaultkick">
+          <size>.3</size>
+          <x>.41</x>
+          <y>.2</y>
+          <zindex>0</zindex>
+        </drumLayout>
+        <drumLayout targetId="defaultsnare">
+          <size>.25</size>
+          <x>.16</x>
+          <y>.34</y>
+          <zindex>2</zindex>
+          <angle>61</angle>
+        </drumLayout>
+        <drumLayout targetId="defaulthitom">
+          <size>.22</size>
+          <x>.33</x>
+          <y>.05</y>
+          <zindex>1</zindex>
+          <angle>150</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultlotom">
+          <size>.22</size>
+          <x>.55</x>
+          <y>.05</y>
+          <zindex>1</zindex>
+          <angle>150</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultfltom">
+          <size>.29</size>
+          <x>.66</x>
+          <y>.44</y>
+          <zindex>1</zindex>
+          <angle>-30</angle>
+        </drumLayout>
+        <drumLayout targetId="defaulthihatcl">
+          <size>.055</size>
+          <x>.11</x>
+          <y>.89</y>
+          <zindex>3</zindex>
+        </drumLayout>
+        <drumLayout targetId="defaulthihatop">
+          <size>.21</size>
+          <x>.03</x>
+          <y>.55</y>
+          <zindex>4</zindex>
+          <angle>80</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultcrash">
+          <size>.26</size>
+          <x>.1</x>
+          <y>.02</y>
+          <zindex>4</zindex>
+          <angle>80</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultride">
+          <size>.25</size>
+          <x>.72</x>
+          <y>.04</y>
+          <zindex>4</zindex>
+        </drumLayout>
+      </drums>
+    </drumkitLayout>
+
+    <drumkitLayout>
+      <name>Portrait layout</name>
+      <targetView>Portrait</targetView>
+      <isDefault>true</isDefault>
+
+      <drums>
+        <drumLayout targetId="defaultkick">
+          <size>0.53359375</size>
+          <x>.2</x>
+          <y>.39</y>
+          <zindex>0</zindex>
+          <angle>-90</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultsnare">
+          <size>0.4446614583</size>
+          <x>.34</x>
+          <y>.64</y>
+          <zindex>2</zindex>
+          <angle>-29</angle>
+        </drumLayout>
+        <drumLayout targetId="defaulthitom">
+          <size>0.3913020833</size>
+          <x>.05</x>
+          <y>.47</y>
+          <zindex>1</zindex>
+          <angle>60</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultlotom">
+          <size>0.3913020833</size>
+          <x>.05</x>
+          <y>.25</y>
+          <zindex>1</zindex>
+          <angle>60</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultfltom">
+          <size>0.5158072917</size>
+          <x>.44</x>
+          <y>.14</y>
+          <zindex>1</zindex>
+          <angle>-120</angle>
+        </drumLayout>
+        <drumLayout targetId="defaulthihatcl">
+          <size>0.0978255208</size>
+          <x>.89</x>
+          <y>.69</y>
+          <zindex>3</zindex>
+          <angle>-90</angle>
+        </drumLayout>
+        <drumLayout targetId="defaulthihatop">
+          <size>0.373515625</size>
+          <x>.55</x>
+          <y>.77</y>
+          <zindex>4</zindex>
+          <angle>-10</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultcrash">
+          <size>0.4624479167</size>
+          <x>.02</x>
+          <y>.7</y>
+          <zindex>4</zindex>
+          <angle>-10</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultride">
+          <size>0.4446614583</size>
+          <x>.04</x>
+          <y>.08</y>
+          <zindex>4</zindex>
+          <angle>-90</angle>
+        </drumLayout>
+      </drums>
+
+    </drumkitLayout>
+      
+    <drumkitLayout>
+      <name>Snapped layout</name>
+      <targetView>Snapped</targetView>
+      <isDefault>true</isDefault>
+
+      <drums>
+        <drumLayout targetId="defaultkick">
+          <size>0.6</size>
+          <x>0.49444900512695339</x>
+          <y>0.32627955277760762</y>
+          <zindex>0</zindex>
+          <angle>-90</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultsnare">
+          <size>0.5</size>
+          <x>0.39433132171630869</x>
+          <y>0.56396647930145249</y>
+          <zindex>2</zindex>
+          <angle>61</angle>
+        </drumLayout>
+        <drumLayout targetId="defaulthitom">
+          <size>0.44</size>
+          <x>0.057991533279419152</x>
+          <y>0.43292328516642276</y>
+          <zindex>1</zindex>
+          <angle>60</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultlotom">
+          <size>0.44</size>
+          <x>0.087597298622131434</x>
+          <y>0.26619099378585825</y>
+          <zindex>1</zindex>
+          <angle>60</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultfltom">
+          <size>0.58</size>
+          <x>0.47881852149963317</x>
+          <y>0.10023623943328863</y>
+          <zindex>1</zindex>
+          <angle>-120</angle>
+        </drumLayout>
+        <drumLayout targetId="defaulthihatcl">
+          <size>0.11</size>
+          <x>0.83815117835998587</x>
+          <y>0.80136797269185378</y>
+          <zindex>3</zindex>
+          <angle>-90</angle>
+        </drumLayout>
+        <drumLayout targetId="defaulthihatop">
+          <size>0.42</size>
+          <x>0.45826869487762456</x>
+          <y>0.74660433133443138</y>
+          <zindex>4</zindex>
+          <angle>-10</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultcrash">
+          <size>0.52</size>
+          <x>-0.015512061119079568</x>
+          <y>0.62290350516637261</y>
+          <zindex>4</zindex>
+          <angle>-10</angle>
+        </drumLayout>
+        <drumLayout targetId="defaultride">
+          <size>0.5</size>
+          <x>0.019840950965881135</x>
+          <y>0.06086617549260457</y>
+          <zindex>4</zindex>
+          <angle>-90</angle>
+        </drumLayout>
+      </drums>
+
+    </drumkitLayout>
+  </items>
+
 </drumkitLayoutCollection>

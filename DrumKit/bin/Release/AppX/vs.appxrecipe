@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>TIBI-PC</Machine>
+    <WindowsUser>Tiberiu</WindowsUser>
+    <SolutionConfiguration>Release|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <RegisteredManifestChecksum>358B56FC5A8C1064C1B7F789DA0653E35A0494D300CE5CD44C5D6E4D2EC92536</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>35555TiberiuChibici.DrumKit_1.1.0.7_neutral__rpr4x2y6afkpe</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>35555TiberiuChibici.DrumKit_rpr4x2y6afkpe!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>35555TiberiuChibici.DrumKit</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=B6F45FE5-D749-4D29-874C-8323B266F3C8</RegisteredPackagePublisher>
+    <RegisteredVersion>1.1.0.7</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="F:\Dev\Windows8\DrumKit\DrumKit\bin\Release\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-01-02T18:28:21.406</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\bin\Release\DrumKit.exe">
+      <PackagePath>DrumKit.exe</PackagePath>
+      <Modified>2013-01-02T18:28:21.270</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\bin\Release\DrumKit.pdb">
+      <PackagePath>DrumKit.pdb</PackagePath>
+      <Modified>2013-01-02T18:28:21.236</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\WebDownloads\SharpDX242\Bin\Signed-winrt\SharpDX.dll">
+      <PackagePath>SharpDX.dll</PackagePath>
+      <Modified>2012-12-21T14:59:50.068</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\WebDownloads\SharpDX242\Bin\Signed-winrt\SharpDX.XAudio2.dll">
+      <PackagePath>SharpDX.XAudio2.dll</PackagePath>
+      <Modified>2012-12-21T15:00:07.213</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\WebDownloads\SharpDX242\Bin\Signed-winrt\SharpDX.xml">
+      <PackagePath>SharpDX.xml</PackagePath>
+      <Modified>2012-12-21T14:59:49.054</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\WebDownloads\SharpDX242\Bin\Signed-winrt\SharpDX.XAudio2.xml">
+      <PackagePath>SharpDX.XAudio2.xml</PackagePath>
+      <Modified>2012-12-21T15:00:06.526</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\Assets\ApplicationData.tar">
+      <PackagePath>Assets\ApplicationData.tar</PackagePath>
+      <Modified>2013-01-02T09:01:52.759</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\Assets\bg.png">
+      <PackagePath>Assets\bg.png</PackagePath>
+      <Modified>2012-12-09T13:05:37.881</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\Assets\Logos\BadgeIcon.png">
+      <PackagePath>Assets\Logos\BadgeIcon.png</PackagePath>
+      <Modified>2012-12-13T12:28:52.517</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\Assets\Logos\SplashScreen.scale-140.png">
+      <PackagePath>Assets\Logos\SplashScreen.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-12-13T12:29:00.338</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\Assets\Logos\SplashScreen.scale-180.png">
+      <PackagePath>Assets\Logos\SplashScreen.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-12-13T12:29:07.967</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\Assets\Logos\WideLogo.png">
+      <PackagePath>Assets\Logos\WideLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-12-15T14:14:57.206</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\Assets\Logos\Logo.png">
+      <PackagePath>Assets\Logos\Logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-12-13T12:28:57.123</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\Assets\Logos\SmallLogo.png">
+      <PackagePath>Assets\Logos\SmallLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-12-13T12:28:59.299</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\Assets\Logos\SplashScreen.scale-100.png">
+      <PackagePath>Assets\Logos\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-12-13T12:29:04.655</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\Assets\Logos\StoreLogo.png">
+      <PackagePath>Assets\Logos\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-12-15T12:57:03.916</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\bin\Release\App.xaml">
+      <PackagePath>App.xaml</PackagePath>
+      <Modified>2012-11-23T13:35:29.271</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\bin\Release\Common\StandardStyles.xaml">
+      <PackagePath>Common\StandardStyles.xaml</PackagePath>
+      <Modified>2012-12-03T21:07:11.038</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\bin\Release\UI\LoadingPage.xaml">
+      <PackagePath>UI\LoadingPage.xaml</PackagePath>
+      <Modified>2013-01-02T12:58:20.145</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\bin\Release\UI\MainPage.xaml">
+      <PackagePath>UI\MainPage.xaml</PackagePath>
+      <Modified>2013-01-02T15:16:30.912</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="F:\Dev\Windows8\DrumKit\DrumKit\bin\Release\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2013-01-02T18:24:21.274</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

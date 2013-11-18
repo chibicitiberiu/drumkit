@@ -9,33 +9,74 @@ using SharpDX.Multimedia;
 
 namespace DrumKit
 {
-    class SoundPool
+    public class SoundPool
     {
-        List<SourceVoice> voices;
+        private XAudio2 Device { get; set; }
+        private MasteringVoice MasterVoice { get; set; }
+        private Queue<SourceVoice> Channels { get; set; }
 
-        public SoundPool(XAudio2 device, WaveFormat format)
+        /// <summary>
+        /// Gets or sets the master volume
+        /// </summary>
+        public float MasterVolume
         {
-            voices = new List<SourceVoice>();
+            get { 
+                return this.MasterVoice.Volume; 
+            }
 
-            for (int i = 0; i < 64; i++)
-                voices.Add(new SourceVoice(device, format, true));
+            set { 
+                this.MasterVoice.SetVolume(value); 
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new sound pool.
+        /// </summary>
+        /// <param name="poly">How many sounds will be able to play simultaneously. Default is 64.</param>
+        public SoundPool(WaveFormat format, int poly = 64)
+        {
+            // Create and initialize device
+            this.Device = new XAudio2();
+            this.Device.StartEngine();
+
+            // Create voices
+            this.MasterVoice = new MasteringVoice(this.Device);
+            this.Channels = new Queue<SourceVoice>();
+
+            for (int i = 0; i < poly; i++)
+            {
+                SourceVoice voice = new SourceVoice(this.Device, format, true);
+                this.Channels.Enqueue(voice);
+            }
         }
 
 
-        public void PlayBuffer(AudioBuffer buffer, uint[] packetinfo)
+        /// <summary>
+        /// Plays a sound buffer through one of the free channels.
+        /// </summary>
+        /// <param name="sound">The sound object</param>
+        public void PlayBuffer(Sound sound, float volumeL = 1.0f, float volumeR = 1.0f)
         {
-            int preferred = -1;
+            float[] volumes = { volumeL, volumeR };
 
-            for (int i = 0; i < voices.Count; i++)
-                if (voices[i].State.BuffersQueued == 0)
-                    preferred = i;
+            SourceVoice top = this.Channels.Dequeue();
+            top.Stop();
+            top.FlushSourceBuffers();
+            top.SubmitSourceBuffer(sound.Buffer, sound.DecodedPacketsInfo);
+            top.SetChannelVolumes(2, volumes);
+            top.Start();
+            this.Channels.Enqueue(top);
+        }
 
-            if (preferred != -1)
-            {
-                // voices[preferred].FlushSourceBuffers();
-                voices[preferred].SubmitSourceBuffer(buffer, packetinfo);
-                voices[preferred].Start();
-            }
+        /// <summary>
+        /// Cleans up used resources
+        /// </summary>
+        public void Dispose()
+        {
+            this.Channels.Clear();
+            this.MasterVoice.Dispose();
+            Device.StopEngine();
+            Device.Dispose();
         }
     }
 }

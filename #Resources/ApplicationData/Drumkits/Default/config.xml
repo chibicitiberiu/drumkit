@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<drumkitConfig>
+    <drums>
+        <drumConfig targetId="defaultkick">
+            <volume>1.0</volume>
+            <vkey>A</vkey>
+        </drumConfig>
+        <drumConfig targetId="defaultsnare">
+            <volume>1.0</volume>
+            <vkey>B</vkey>
+        </drumConfig>
+        <drumConfig targetId="defaulthitom">
+            <volume>1.0</volume>
+            <vkey>C</vkey>
+        </drumConfig>
+        <drumConfig targetId="defaultlotom">
+            <volume>1.0</volume>
+            <vkey>D</vkey>
+        </drumConfig>
+        <drumConfig targetId="defaultfltom">
+            <volume>1.0</volume>
+            <vkey>E</vkey>
+        </drumConfig>
+        <drumConfig targetId="defaulthihatcl">
+            <volume>1.0</volume>
+            <vkey>F</vkey>
+        </drumConfig>
+        <drumConfig targetId="defaulthihatop">
+            <volume>1.0</volume>
+            <vkey>G</vkey>
+        </drumConfig>
+        <drumConfig targetId="defaultcrash">
+            <volume>1.0</volume>
+            <vkey>H</vkey>
+        </drumConfig>
+        <drumConfig targetId="defaultride">
+            <volume>1.0</volume>
+            <vkey>I</vkey>
+        </drumConfig>
+    </drums>
+</drumkitConfig>

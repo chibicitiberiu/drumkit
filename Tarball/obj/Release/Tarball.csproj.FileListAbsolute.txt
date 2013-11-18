@@ -1,0 +1,10 @@
+F:\Dev\Windows8\DrumKit\Tarball\bin\Release\Tarball.dll
+F:\Dev\Windows8\DrumKit\Tarball\bin\Release\Tarball.pdb
+F:\Dev\Windows8\DrumKit\Tarball\bin\Release\Tarball.pri
+F:\Dev\Windows8\DrumKit\Tarball\obj\Release\Tarball.dll
+F:\Dev\Windows8\DrumKit\Tarball\obj\Release\Tarball.pdb
+F:\Dev\Windows8\DrumKit\Tarball\obj\Release\priconfig.xml
+F:\Dev\Windows8\DrumKit\Tarball\obj\Release\layout.resfiles
+F:\Dev\Windows8\DrumKit\Tarball\obj\Release\resources.resfiles
+F:\Dev\Windows8\DrumKit\Tarball\obj\Release\pri.resfiles
+F:\Dev\Windows8\DrumKit\Tarball\obj\Release\LanguageQualifiers.txt

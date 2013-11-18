@@ -27,7 +27,10 @@
     </ResourceDictionary.ThemeDictionaries>
 
     <x:String x:Key="ChevronGlyph">&#xE26B;</x:String>
-
+    
+    <!-- User defined brushes -->
+    <SolidColorBrush x:Key="ApplicationBackgroundColor" Color="#164646" />
+    
     <!-- RichTextBlock styles -->
 
     <Style x:Key="BasicRichTextStyle" TargetType="RichTextBlock">
@@ -233,6 +236,11 @@
         <Setter Property="Foreground" Value="{StaticResource ApplicationSecondaryForegroundThemeBrush}"/>
     </Style>
 
+    <Style x:Key="MyButtonStyle" TargetType="Button" BasedOn="{StaticResource TextButtonStyle}">
+        <Setter Property="Margin" Value="0,0,14,0" />
+
+    </Style>
+
     <!--
         TextRadioButtonStyle is used to style a RadioButton using subheader-styled text with no other adornment.
         This style is used in the SearchResultsPage to allow selection among filters.
@@ -429,8 +437,20 @@
         <Setter Property="AutomationProperties.Name" Value="Video"/>
         <Setter Property="Content" Value="&#xE116;"/>
     </Style>
-    
-        <!--
+
+    <Style x:Key="DeleteAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
+        <Setter Property="AutomationProperties.AutomationId" Value="DeleteAppBarButton"/>
+        <Setter Property="AutomationProperties.Name" Value="Delete"/>
+        <Setter Property="Content" Value="&#xE106;"/>
+    </Style>
+
+    <Style x:Key="SaveAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
+        <Setter Property="AutomationProperties.AutomationId" Value="SaveAppBarButton"/>
+        <Setter Property="AutomationProperties.Name" Value="Save"/>
+        <Setter Property="Content" Value="&#xE105;"/>
+    </Style>
+
+    <!--
     
     <Style x:Key="SkipBackAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
         <Setter Property="AutomationProperties.AutomationId" Value="SkipBackAppBarButton"/>
@@ -443,16 +463,7 @@
         <Setter Property="Content" Value="&#xE101;"/>
     </Style>
 
-    <Style x:Key="SaveAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
-        <Setter Property="AutomationProperties.AutomationId" Value="SaveAppBarButton"/>
-        <Setter Property="AutomationProperties.Name" Value="Save"/>
-        <Setter Property="Content" Value="&#xE105;"/>
-    </Style>
-    <Style x:Key="DeleteAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
-        <Setter Property="AutomationProperties.AutomationId" Value="DeleteAppBarButton"/>
-        <Setter Property="AutomationProperties.Name" Value="Delete"/>
-        <Setter Property="Content" Value="&#xE106;"/>
-    </Style>
+
     <Style x:Key="DiscardAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
         <Setter Property="AutomationProperties.AutomationId" Value="DiscardAppBarButton"/>
         <Setter Property="AutomationProperties.Name" Value="Discard"/>
@@ -523,12 +534,15 @@
         <Setter Property="AutomationProperties.Name" Value="Photo"/>
         <Setter Property="Content" Value="&#xE114;"/>
     </Style>
+    
+    
+    -->
+
     <Style x:Key="SettingsAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
         <Setter Property="AutomationProperties.AutomationId" Value="SettingsAppBarButton"/>
         <Setter Property="AutomationProperties.Name" Value="Settings"/>
-        <Setter Property="Content" Value="&#xE115;"/>
+        <Setter Property="Content" Value="&#xE115;" />
     </Style>
-    -->
 
     <!--
 
@@ -1833,4 +1847,10 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <SolidColorBrush x:Key="ListViewItemSelectedBackgroundThemeBrush" Color="#075369"></SolidColorBrush>
+    <SolidColorBrush x:Key="ListViewItemPointerOverBackgroundThemeBrush" Color="#30ffffff"></SolidColorBrush>
+    <SolidColorBrush x:Key="ListViewItemSelectedPointerOverBackgroundThemeBrush" Color="#ab188DAD"></SolidColorBrush>
+    <SolidColorBrush x:Key="ListViewItemSelectedPointerOverBorderThemeBrush" Color="#ab188DAD"></SolidColorBrush>
+
 </ResourceDictionary>

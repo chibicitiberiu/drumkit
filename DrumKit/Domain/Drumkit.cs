@@ -22,8 +22,29 @@ namespace DrumKit
         [XmlElement("layoutfile")]
         public string LayoutFilePath { get; set; }
 
+        [XmlIgnore()]
+        public Dictionary<string, Drum> Drums { get; private set; }
+
         [XmlArray("drums")]
-        public List<Drum> Drums { get; set; }
+        public Drum[] DrumsList {
+            get {
+                List<Drum> drums = new List<Drum>();
+                
+                foreach (var i in Drums)
+                    drums.Add(i.Value);
+
+                return drums.ToArray();
+            }
+
+            set {
+                foreach (var i in value)
+                    Drums.Add(i.Id, i);
+            }
+        }
+
+        
+        [XmlIgnore()]
+        public Windows.Storage.StorageFolder RootFolder { get; set; }
 
         public Drumkit()
         {
@@ -31,7 +52,8 @@ namespace DrumKit
             this.Description = null;
             this.ConfigFilePath = null;
             this.LayoutFilePath = null;
-            this.Drums = new List<Drum>();
+            this.Drums = new Dictionary<string,Drum>();
+            this.RootFolder = null;
         }
     }
 }

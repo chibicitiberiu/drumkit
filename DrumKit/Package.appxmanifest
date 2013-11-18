@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="35555TiberiuChibici.DrumKit" Publisher="CN=B6F45FE5-D749-4D29-874C-8323B266F3C8" Version="1.1.0.14" />
+  <Identity Name="35555TiberiuChibici.DrumKit" Publisher="CN=B6F45FE5-D749-4D29-874C-8323B266F3C8" Version="2.2.0.27" />
   <Properties>
     <DisplayName>DrumKit</DisplayName>
     <PublisherDisplayName>Tiberiu Chibici</PublisherDisplayName>
@@ -19,7 +19,9 @@
         <DefaultTile ShowName="allLogos" WideLogo="Assets\Logos\WideLogo.png" />
         <SplashScreen Image="Assets\Logos\SplashScreen.png" />
         <InitialRotationPreference>
+          <Rotation Preference="portrait" />
           <Rotation Preference="landscape" />
+          <Rotation Preference="portraitFlipped" />
           <Rotation Preference="landscapeFlipped" />
         </InitialRotationPreference>
       </VisualElements>

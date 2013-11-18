@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<drumkit>
+    
+    <!-- General info -->
+    <name>Default</name>
+    <description>Default drums</description>
+    
+    <!-- Files -->
+    <configfile>config.xml</configfile>
+    <layoutfile>layout.xml</layoutfile>
+    
+    <!-- Drums -->
+    <drums>
+        <drum id="defaultkick">
+            <name>Kick</name>
+            <image>Images/kick.png</image>
+            <imagePressed>Images/kickPressed.png</imagePressed>
+            <sounds>
+                <sound intensity="0">Sounds/Kick07.wav</sound>
+            </sounds>
+        </drum>
+
+        <drum id="defaultsnare">
+            <name>Snare</name>
+            <image>Images/drum.png</image>
+            <imagePressed>Images/drumPressed.png</imagePressed>
+            <sounds>
+                <sound intensity="0">Sounds/Snare08.wav</sound>
+            </sounds>
+        </drum>
+
+        <drum id="defaulthitom">
+            <name>High Tom</name>
+            <image>Images/drum.png</image>
+            <imagePressed>Images/drumPressed.png</imagePressed>
+            <sounds>
+                <sound intensity="0">Sounds/TomHigh04.wav</sound>
+            </sounds>
+        </drum>
+
+        <drum id="defaultlotom">
+            <name>Low Tom</name>
+            <image>Images/drum.png</image>
+            <imagePressed>Images/drumPressed.png</imagePressed>
+            <sounds>
+                <sound intensity="0">Sounds/TomLow04.wav</sound>
+            </sounds>
+        </drum>
+
+        <drum id="defaultfltom">
+            <name>Floor Tom</name>
+            <image>Images/drum.png</image>
+            <imagePressed>Images/drumPressed.png</imagePressed>
+            <sounds>
+                <sound intensity="0">Sounds/Floor04.wav</sound>
+            </sounds>
+        </drum>
+
+        <drum id="defaulthihatcl">
+            <name>Hi-Hat Closed (pedal)</name>
+            <image>Images/pedal.png</image>
+            <imagePressed>Images/pedalPressed.png</imagePressed>
+            <sounds>
+                <sound intensity="0">Sounds/HiHatClosed04.wav</sound>
+            </sounds>
+        </drum>
+
+        <drum id="defaulthihatop">
+            <name>Hi-Hat Opened</name>
+            <image>Images/plate.png</image>
+            <imagePressed>Images/platePressed.png</imagePressed>
+            <sounds>
+                <sound intensity="0">Sounds/HiHatOpen04.wav</sound>
+            </sounds>
+        </drum>
+
+        <drum id="defaultcrash">
+            <name>Crash</name>
+            <image>Images/plate.png</image>
+            <imagePressed>Images/platePressed.png</imagePressed>
+            <sounds>
+                <sound intensity="0">Sounds/Crash05.wav</sound>
+            </sounds>
+        </drum>
+
+        <drum id="defaultride">
+            <name>Ride</name>
+            <image>Images/plate.png</image>
+            <imagePressed>Images/platePressed.png</imagePressed>
+            <sounds>
+                <sound intensity="0">Sounds/Ride04.wav</sound>
+            </sounds>
+        </drum>
+
+    </drums>
+
+    <!--
+    [Kick]
+        position=.41,.2
+        size=.3
+        image=ms-appx:///Assets/Drums/big_drum_of.png
+        sound,0=ms-appx:///Assets/Sounds/Kick07.wav
+    [Snare]
+        position=.16,.34
+        size=.25
+        image=ms-appx:///Assets/Drums/drum_of.png
+        sound,0=ms-appx:///Assets/Sounds/Snare08.wav
+    [High Tom]
+        position=.33,.05
+        size=.22
+        image=ms-appx:///Assets/Drums/drum_of.png
+        sound,0=ms-appx:///Assets/Sounds/TomHigh04.wav
+    [Low Tom]
+        position=.55,.05
+        size=.22
+        image=ms-appx:///Assets/Drums/drum_of.png
+        sound,0=ms-appx:///Assets/Sounds/TomLow04.wav
+    [Floor Tom]
+        position=.66,.44
+        size=.29
+        image=ms-appx:///Assets/Drums/drum_of.png
+        sound,0=ms-appx:///Assets/Sounds/Floor04.wav
+    [Hi-Hat Closed]
+        position=.10,.87
+        size=.05
+        image=ms-appx:///Assets/Drums/HiHat_off.png
+        sound,0=ms-appx:///Assets/Sounds/HiHatClosed04.wav
+    [Hi-Hat Opened]
+        position=.03,.55
+        size=.21
+        image=ms-appx:///Assets/Drums/plate_off.png
+        sound,0=ms-appx:///Assets/Sounds/HiHatOpen04.wav
+    [Crash]
+        position=.1,.02
+        size=.25
+        image=ms-appx:///Assets/Drums/plate_off.png
+        sound,0=ms-appx:///Assets/Sounds/Crash05.wav
+    [Ride]
+        position=.72,.04
+        size=.25
+        image=ms-appx:///Assets/Drums/plate_off.png
+        sound,0=ms-appx:///Assets/Sounds/Ride04.wav-->
+</drumkit>

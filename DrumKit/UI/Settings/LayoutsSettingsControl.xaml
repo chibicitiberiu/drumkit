@@ -1,0 +1,92 @@
+﻿<UserControl
+    x:Class="DrumKit.LayoutsSettingsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DrumKit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            
+            <DataTemplate x:Key="DrumkitListDataTemplate">
+                <Grid Name="theGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Left thing -->
+                    <Border Name="greenBorder"
+                            Grid.Column="0" Grid.RowSpan="3" 
+                            Background="GreenYellow" Width="10" />
+
+                    <!-- Name -->
+                    <TextBox Grid.Column="1" Grid.Row="0" Margin="15,2,15,0"
+                           FontSize="15.3"
+                           Style="{StaticResource MyTextBoxStyle}" 
+                           Text="{Binding Name}"
+                           TextChanged="NameTextChanged" />
+
+                    <!-- Description -->
+                    <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="15,0,15,2"
+                                Orientation="Horizontal">
+                        <ToggleButton Name="toggleLandscape" Click="ToggleLandscape_Click">Landscape</ToggleButton>
+                        <ToggleButton Name="togglePortrait" Click="TogglePortrait_Click">Portrait</ToggleButton>
+                        <ToggleButton Name="toggleFilled" Click="ToggleFilled_Click">Filled</ToggleButton>
+                        <ToggleButton Name="toggleSnapped" Click="ToggleSnapped_Click">Snapped</ToggleButton>
+                    </StackPanel>
+
+                </Grid>
+
+            </DataTemplate>
+
+            <Style x:Key="ListViewStretchItemStyle" TargetType="ListViewItem">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            </Style>
+
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!-- Drumkit list -->
+        <ListView Name="listLayouts" 
+                  Grid.Row="0" Grid.Column="0"
+                  ItemTemplate="{StaticResource DrumkitListDataTemplate}"
+                  ItemContainerStyle="{StaticResource ListViewStretchItemStyle}" 
+                  SelectionMode="Single" >
+
+            <local:DrumkitLayout IsDefault="True" Name="Hello world" TargetViewSerialize="All" />
+            
+            <TextBlock>Hello world!</TextBlock>
+
+        </ListView>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button Style="{StaticResource MyButtonStyle}" Click="ButtonCreate_Click">Create</Button>
+            <Button Style="{StaticResource MyButtonStyle}" Click="ButtonEdit_Click">Edit</Button>
+            <Button Style="{StaticResource MyButtonStyle}" Click="ButtonDelete_Click">Delete</Button>
+            <Button Style="{StaticResource MyButtonStyle}" Click="ButtonToggleActive_Click">Toggle active</Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

@@ -6,21 +6,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Page.Transitions>
-        <TransitionCollection>
-            <EntranceThemeTransition />
-        </TransitionCollection>
-    </Page.Transitions> 
-        
-    <Grid
-        Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-    
-        <Image Source="ms-appx:///Assets/bg.png"
-               Stretch="UniformToFill"/>
-        
-        <Grid Name="canvasContainer" />
 
-        <Grid Visibility="Collapsed">
+    <Page.Resources>
+
+        <ImageBrush x:Key="MainpageBackgroundBrush" ImageSource="ms-appx:///Assets/bg.png" Stretch="UniformToFill" />
+
+    </Page.Resources>
+
+    <Grid
+        Background="{StaticResource MainpageBackgroundBrush}">
+
+        <Canvas Name="canvas" />
+
+        <!--<Grid Visibility="Collapsed">
             <Border Margin="7"
                     CornerRadius="10" 
                     BorderBrush="Red" 
@@ -51,34 +49,49 @@
                     </EventTrigger>
                 </Canvas.Triggers>
             </Canvas>
-            <!--<StackPanel Orientation="Horizontal"
+            <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top">
                 <Button>Record</Button>
                 <Button>Stop</Button>
-            </StackPanel>-->
-        </Grid>
+            </StackPanel>
+        </Grid>-->
 
     </Grid>
-    
+
 
     <Page.BottomAppBar>
         <AppBar>
-            <StackPanel Orientation="Horizontal">
-                
-                <ToggleButton
-                    Name="buttonAnimations"
-                    Click="buttonAnimations_Click"
-                    AutomationProperties.Name="Animations"
-                    IsChecked="True"
-                    Style="{StaticResource VideoAppBarButtonStyle}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-                <ToggleButton
-                    Name="buttonEditMode"
-                    Click="buttonEditMode_Click"
-                    Style="{StaticResource EditAppBarButtonStyle}" />
-                
-            </StackPanel>
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+
+                    <ToggleButton
+                        Name="buttonAnimations"
+                        Click="buttonAnimations_Click"
+                        AutomationProperties.Name="Animations"
+                        IsChecked="True"
+                        Style="{StaticResource VideoAppBarButtonStyle}" />
+
+                    <Button
+                        Name="buttonEditMode"
+                        Click="ButtonEditMode_Click"
+                        Style="{StaticResource EditAppBarButtonStyle}" />
+                    
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" >
+                    <Button 
+                        Name="buttonSettings"
+                        Click="ButtonSettings_Click"
+                        AutomationProperties.Name="Settings"
+                        Style="{StaticResource SettingsAppBarButtonStyle}" />
+                </StackPanel>
+            </Grid>
         </AppBar>
     </Page.BottomAppBar>
 </Page>

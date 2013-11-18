@@ -27,10 +27,22 @@ namespace DrumKit
         public string ImageSource { get; set; }
 
         /// <summary>
+        /// Gets or sets the image loaded into memory.
+        /// </summary>
+        [XmlIgnore()]
+        public Windows.UI.Xaml.Media.ImageSource LoadedImageSource { get; set; }
+
+        /// <summary>
         /// Gets or sets the image uri.
         /// </summary>
         [XmlElement("imagePressed")]
         public string ImagePressedSource { get; set; }
+
+        /// <summary>
+        /// Gets or sets the pressed image loaded into memory.
+        /// </summary>
+        [XmlIgnore()]
+        public Windows.UI.Xaml.Media.ImageSource LoadedImagePressedSource { get; set; }
 
         /// <summary>
         /// Gets or sets the list of sound sources.
@@ -45,6 +57,10 @@ namespace DrumKit
             this.Name = null;
             this.ImageSource = null;
             this.ImagePressedSource = null;
+
+            this.LoadedImageSource = null;
+            this.LoadedImagePressedSource = null;
+            
             this.Sounds = new List<SoundSource>();
         }
 

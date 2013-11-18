@@ -12,7 +12,10 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>DrumKit_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>DrumKit_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <PackageCertificateThumbprint>4FCCD6DD6F5D1EEA43AC26BB8D451F1B54209922</PackageCertificateThumbprint>
+    <AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -103,46 +106,75 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Drum.cs" />
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Archiving\TarballReader.cs" />
+    <Compile Include="Domain\AppSettings.cs" />
+    <Compile Include="IOHelper.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Managers\DataManager.cs" />
+    <Compile Include="Domain\Drum.cs" />
+    <Compile Include="Domain\DrumConfig.cs" />
+    <Compile Include="Domain\Drumkit.cs" />
+    <Compile Include="Domain\DrumkitConfig.cs" />
+    <Compile Include="Domain\DrumkitLayout.cs" />
+    <Compile Include="Domain\DrumkitLayoutCollection.cs" />
+    <Compile Include="Domain\DrumkitLayoutTargetView.cs" />
+    <Compile Include="Domain\DrumLayout.cs" />
+    <Compile Include="Managers\DrumsManager.cs" />
+    <Compile Include="Managers\UIManager.cs" />
+    <Compile Include="UI\DrumUI.cs" />
+    <Compile Include="UI\LoadingPage.xaml.cs">
+      <DependentUpon>LoadingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Recorder.cs" />
-    <Compile Include="Repository\DrumRepository.cs" />
-    <Compile Include="SoundPlayer.cs" />
+    <Compile Include="Managers\SoundManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoundPool.cs" />
+    <Compile Include="Domain\SoundSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\ApplicationData.tar" />
+    <None Include="Build\7z.exe" />
+    <None Include="Build\ApplicationData\Drumkits\Default\config.xml" />
+    <None Include="Build\ApplicationData\Drumkits\Default\drumkit.xml" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Images\drum.png" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Images\drumPressed.png" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Images\kick.png" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Images\kickPressed.png" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Images\pedal.png" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Images\pedalPressed.png" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Images\plate.png" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Images\platePressed.png" />
+    <None Include="Build\ApplicationData\Drumkits\Default\layout.xml" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Sounds\Crash05.wav" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Sounds\Floor04.wav" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Sounds\Hat04.WAV" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Sounds\HiHatClosed04.wav" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Sounds\HiHatOpen04.wav" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Sounds\Kick07.wav" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Sounds\Ride04.wav" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Sounds\Snare08.wav" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Sounds\TomHigh04.wav" />
+    <None Include="Build\ApplicationData\Drumkits\Default\Sounds\TomLow04.wav" />
+    <None Include="DrumKit_StoreKey.pfx" />
     <None Include="DrumKit_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\bg.png" />
-    <Content Include="Assets\Drums\big_drum_of.png" />
-    <Content Include="Assets\Drums\big_drum_on.png" />
-    <Content Include="Assets\Drums\drum_of.png" />
-    <Content Include="Assets\Drums\drum_on.png" />
-    <Content Include="Assets\Sounds\Crash05.wav" />
-    <Content Include="Assets\Sounds\Hat04.WAV" />
-    <Content Include="Assets\Sounds\HiHatOpen04.wav" />
-    <Content Include="Assets\Sounds\Kick07.wav" />
-    <Content Include="Assets\default">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Assets\Logos\BadgeIcon.png" />
+    <Content Include="Assets\Logos\SplashScreen.scale-140.png" />
+    <Content Include="Assets\Logos\SplashScreen.scale-180.png" />
+    <Content Include="Assets\Logos\WideLogo.png" />
     <Content Include="Assets\Logos\Logo.png" />
     <Content Include="Assets\Logos\SmallLogo.png" />
-    <Content Include="Assets\Logos\SplashScreen.png" />
+    <Content Include="Assets\Logos\SplashScreen.scale-100.png" />
     <Content Include="Assets\Logos\StoreLogo.png" />
-    <Content Include="Assets\Drums\plate_off.png" />
-    <Content Include="Assets\Drums\plate_on.png" />
-    <Content Include="Assets\Sounds\Ride04.wav" />
-    <Content Include="Assets\Sounds\Snare08.wav" />
-    <Content Include="Assets\Sounds\TomHigh04.wav" />
-    <Content Include="Assets\Sounds\Floor04.wav" />
-    <Content Include="Assets\Sounds\TomLow04.wav" />
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -153,17 +185,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainPage.xaml">
+    <Page Include="UI\LoadingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SharpDX">
-      <HintPath>C:\Users\Tiberiu\Downloads\SharpDX\Bin\Standard-winrt\SharpDX.dll</HintPath>
+    <Reference Include="SharpDX, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebDownloads\SharpDX242\Bin\Signed-winrt\SharpDX.dll</HintPath>
     </Reference>
-    <Reference Include="SharpDX.XAudio2">
-      <HintPath>C:\Users\Tiberiu\Downloads\SharpDX\Bin\Standard-winrt\SharpDX.XAudio2.dll</HintPath>
+    <Reference Include="SharpDX.XAudio2, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\WebDownloads\SharpDX242\Bin\Signed-winrt\SharpDX.XAudio2.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup />
@@ -171,6 +209,9 @@
     <VisualStudioVersion>11.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(ProjectDir)\Build\7z.exe" a -ttar -y "$(ProjectDir)\Assets\ApplicationData.tar" "$(ProjectDir)\Build\ApplicationData\*"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -424,7 +424,13 @@
         <Setter Property="Content" Value="&#xE103;"/>
     </Style>
 
-    <!--
+    <Style x:Key="VideoAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
+        <Setter Property="AutomationProperties.AutomationId" Value="VideoAppBarButton"/>
+        <Setter Property="AutomationProperties.Name" Value="Video"/>
+        <Setter Property="Content" Value="&#xE116;"/>
+    </Style>
+    
+        <!--
     
     <Style x:Key="SkipBackAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
         <Setter Property="AutomationProperties.AutomationId" Value="SkipBackAppBarButton"/>
@@ -525,10 +531,7 @@
     -->
 
     <!--
-    <Style x:Key="VideoAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
-        <Setter Property="AutomationProperties.AutomationId" Value="VideoAppBarButton"/>
-        <Setter Property="AutomationProperties.Name" Value="Video"/>
-        <Setter Property="Content" Value="&#xE116;"/>
+
     </Style>
     <Style x:Key="RefreshAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
         <Setter Property="AutomationProperties.AutomationId" Value="RefreshAppBarButton"/>

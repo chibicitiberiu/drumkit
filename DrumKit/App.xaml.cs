@@ -64,7 +64,7 @@ namespace DrumKit
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(MainPage), args.Arguments))
+                if (!rootFrame.Navigate(typeof(LoadingPage), args.Arguments))
                 {
                     throw new Exception("Failed to create initial page");
                 }
@@ -80,10 +80,22 @@ namespace DrumKit
         /// </summary>
         /// <param name="sender">The source of the suspend request.</param>
         /// <param name="e">Details about the suspend request.</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
+        private async void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+            try {
+                await DataManager.Close();
+            }
+
+            catch (Exception ex) {
+                Log.Error("Exception in OnSuspending method!");
+                Log.Except(ex);
+            }
+
+            Log.Write("Application suspended.");
+
+            //TODO:::...
             deferral.Complete();
         }
     }

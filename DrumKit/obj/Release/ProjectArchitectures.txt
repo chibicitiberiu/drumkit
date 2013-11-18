@@ -1,2 +1,0 @@
-F:\Dev\Windows8\DrumKit\DrumKit\DrumKit.csproj;neutral
-F:\Dev\Windows8\DrumKit\Tarball\Tarball.csproj;neutral

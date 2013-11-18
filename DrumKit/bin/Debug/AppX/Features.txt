@@ -1,8 +1,0 @@
-﻿Feature ideas:
-
-* drum hit intensity
-* audio effects (echo & stuff)
-* additional drum sets
-* create/delete drums
-* create drum kits
-* z index in editor

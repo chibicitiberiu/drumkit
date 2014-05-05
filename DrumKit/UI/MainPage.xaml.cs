@@ -79,11 +79,20 @@ namespace DrumKit
         {
             // Clear previous stuff if any
             this.DrumUIs.Clear();
-            this.Keymap.Clear();
 
             // Load drums
             foreach (var i in DataController.CurrentDrumkit.DrumsList)
                 InitializeDrum(i);
+
+            UpdateDrumConfig();
+        }
+
+        /// <summary>
+        /// Sets up the drum configurations
+        /// </summary>
+        private void UpdateDrumConfig()
+        {
+            this.Keymap.Clear();
 
             // Load drum configurations
             foreach (var i in DataController.CurrentConfig.DrumsList)
@@ -95,9 +104,16 @@ namespace DrumKit
                     this.DrumUIs.Remove(i.TargetId);
                 }
 
-                // Keyboard mapping
-                if (!Keymap.ContainsKey(i.Key))
-                    Keymap.Add(i.Key, i.TargetId);
+                else
+                {
+                    // Set drum key
+                    this.DrumUIs[i.TargetId].KeyString = UIHelper.GetPrettifiedVKeyName(i.Key);
+                    this.DrumUIs[i.TargetId].IsKeyVisible = DataController.Settings.ShowKeyBindings;
+
+                    // Keyboard mapping
+                    if (!Keymap.ContainsKey(i.Key))
+                        Keymap.Add(i.Key, i.TargetId);
+                }
             }
         }
 
@@ -283,6 +299,7 @@ namespace DrumKit
 
             // Set toggles
             buttonAnimations.IsChecked = DataController.Settings.Animations;
+            buttonKeys.IsChecked = DataController.Settings.ShowKeyBindings;
         }
 
         /// <summary>
@@ -337,6 +354,29 @@ namespace DrumKit
         }
 
         /// <summary>
+        /// Handles the 'show keys' toggle button
+        /// </summary>
+        private void buttonKeys_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as ToggleButton;
+            if (button == null) return;
+
+            bool isChecked = (button.IsChecked.HasValue && button.IsChecked.Value);
+
+            // Fix togglebuton style bug
+            VisualStateManager.GoToState(button, isChecked ? "Checked" : "Unchecked", false);
+
+            // Change setting
+            DataController.Settings.ShowKeyBindings = isChecked;
+
+            // Update UI
+            UpdateDrumConfig();
+
+            // Save modified setting
+            DataController.SaveSettings();
+        }
+
+        /// <summary>
         /// Goes to application settings.
         /// </summary>
         private void ButtonSettings_Click(object sender, RoutedEventArgs e)
@@ -345,6 +385,5 @@ namespace DrumKit
         }
 
         #endregion
-
     }
 }

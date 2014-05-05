@@ -62,11 +62,50 @@ namespace DrumKit
         /// <summary>
         /// Enables or disables the hit animation.
         /// </summary>
-        private bool IsAnimationEnabled {
-            get {
+        private bool IsAnimationEnabled
+        {
+            get
+            {
                 return DataController.Settings.Animations;
             }
         }
+
+        /// <summary>
+        /// Sets the key string for display
+        /// </summary>
+        public string KeyString
+        {
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                    this.textKey.Text = String.Format("{0} [{1}]", DrumName, value);
+
+                else this.textKey.Text = DrumName;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating if the key is visible
+        /// </summary>
+        public bool IsKeyVisible
+        {
+            get
+            {
+                return this.textKey.Visibility == Windows.UI.Xaml.Visibility.Visible;
+            }
+            set
+            {
+                this.textKey.Visibility = (value) ? Visibility.Visible : Visibility.Collapsed;
+                this.textKeyShadow.Visibility = (value) ? Visibility.Visible : Visibility.Collapsed;
+            }
+        }
+
+
+        /// <summary>
+        /// Gets or sets the drum name
+        /// </summary>
+        private string DrumName { get; set; }
+
         #endregion
 
         #region Constructor
@@ -82,7 +121,8 @@ namespace DrumKit
 
             // Set drum properties
             this.DrumID = drum.Id;
-            // TODO: key
+            this.DrumName = drum.Name;
+            this.KeyString = null;
             this.image.Source = drum.LoadedImageSource;
             this.imagePressed.Source = drum.LoadedImagePressedSource;
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.System;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
@@ -51,5 +52,24 @@ namespace DrumKit
             return null;
         }
         
+        public static string GetPrettifiedVKeyName(VirtualKey vkey)
+        {
+            if (Enum.IsDefined(typeof(VirtualKey), vkey))
+            {
+                // Get name
+                string text = Enum.GetName(typeof(VirtualKey), vkey);
+
+                // Prettify the name
+                if (text.StartsWith("Number"))
+                    text = text.Substring("Number".Length);
+
+                text = System.Text.RegularExpressions.Regex.Replace(text, "([a-z])([A-Z])", "${1} ${2}");
+
+                // Set the text
+                return text;
+            }
+
+            else return string.Format("Unnamed ({0})", (int)vkey);
+        }
     }
 }

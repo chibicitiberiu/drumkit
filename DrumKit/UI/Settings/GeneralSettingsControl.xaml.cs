@@ -36,14 +36,14 @@ namespace DrumKit
             this.masterVolumeSlider.Value = DataController.MasterVolume * 100;
             this.polyphonySlider.Value = DataController.Settings.Polyphony;
             this.animationsToggle.IsOn = DataController.Settings.Animations;
-            //this.keyBindingsToggle.IsOn = DataController.Settings.ShowKeyBindings;
+            this.keyBindingsToggle.IsOn = DataController.Settings.ShowKeyBindings;
             this.debuggingModeToggle.IsOn = DataController.Settings.DebugMode;
 
             // Set up events
             masterVolumeSlider.ValueChanged += masterVolumeSlider_ValueChanged;
             polyphonySlider.ValueChanged += polyphonySlider_ValueChanged;
             animationsToggle.Toggled += animationsToggle_Toggled;
-            //keyBindingsToggle.Toggled += keyBindingsToggle_Toggled;
+            keyBindingsToggle.Toggled += keyBindingsToggle_Toggled;
             buttonWebsite.Click += buttonWebsite_Click;
             buttonSupport.Click += buttonSupport_Click;
             buttonReset.Click += buttonReset_Click;
@@ -68,11 +68,11 @@ namespace DrumKit
             DataController.SaveSettings();
         }
 
-        //private void keyBindingsToggle_Toggled(object sender, RoutedEventArgs e)
-        //{
-        //    DataController.Settings.ShowKeyBindings = this.keyBindingsToggle.IsOn;
-        //    DataController.SaveSettings();
-        //}
+        private void keyBindingsToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            DataController.Settings.ShowKeyBindings = this.keyBindingsToggle.IsOn;
+            DataController.SaveSettings();
+        }
 
         private async void buttonWebsite_Click(object sender, RoutedEventArgs e)
         {

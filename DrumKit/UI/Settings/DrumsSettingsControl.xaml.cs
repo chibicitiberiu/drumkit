@@ -106,22 +106,7 @@ namespace DrumKit
 
                 if (key != null)
                 {
-                    if (Enum.IsDefined(typeof(VirtualKey), config.Key))
-                    {
-                        // Get name
-                        string text = Enum.GetName(typeof(VirtualKey), config.Key);
-                        
-                        // Prettify the name
-                        if (text.StartsWith("Number"))
-                            text = text.Substring("Number".Length);
-                        
-                        text = System.Text.RegularExpressions.Regex.Replace(text, "([a-z])([A-Z])", "${1} ${2}");
-
-                        // Set the text
-                        key.Text = text;
-                    }
-
-                    else key.Text = string.Format("Unnamed ({0})", (int)config.Key);
+                    key.Text = UIHelper.GetPrettifiedVKeyName(config.Key);
                 }
             }
         }

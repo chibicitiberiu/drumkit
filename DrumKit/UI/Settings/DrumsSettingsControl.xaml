@@ -68,7 +68,7 @@
                         <ToggleButton 
                             Name="toggleEnabled" Grid.Column="0"
                             Margin="0,-4,20,0" Padding="5,1"
-                            Content="Enabled" 
+                            Content="Visible" 
                             Click="ToggleEnabled_Click" />
                         
                         <TextBlock 

@@ -201,6 +201,7 @@
     <None Include="Build\ApplicationData\Drumkits\Default\Sounds\TomLow04.wav" />
     <None Include="DrumKit_StoreKey.pfx" />
     <None Include="DrumKit_TemporaryKey.pfx" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\bg.png" />
@@ -282,20 +283,21 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SharpDX, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\WebDownloads\SharpDX242\Bin\Signed-winrt\SharpDX.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.XAudio2, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\WebDownloads\SharpDX242\Bin\Signed-winrt\SharpDX.XAudio2.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Tarball\Tarball.csproj">
       <Project>{5cb567d7-572e-4bae-802f-7e3f62cddf64}</Project>
       <Name>Tarball</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SharpDX">
+      <HintPath>..\packages\SharpDX.2.5.0\lib\win8\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.XAudio2">
+      <HintPath>..\packages\SharpDX.XAudio2.2.5.0\lib\win8\SharpDX.XAudio2.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

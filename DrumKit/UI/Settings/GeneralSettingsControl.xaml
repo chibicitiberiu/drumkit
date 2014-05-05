@@ -133,12 +133,12 @@
                 Grid.Row="10" Grid.Column="1"/>
 
         <!-- Interface section: Key bindings -->
-        <!--<TextBlock Style="{StaticResource ItemTextStyle}" 
+        <TextBlock Style="{StaticResource ItemTextStyle}" 
                    Grid.Row="11" Margin="2,12,2,2">
             Display key bindings</TextBlock>
 
         <ToggleSwitch Name="keyBindingsToggle"
-                Grid.Row="11" Grid.Column="1"/>-->
+                Grid.Row="11" Grid.Column="1"/>
 
         <!-- Miscellaneous section -->
         <TextBlock Style="{StaticResource MyTitleTextStyle}" 

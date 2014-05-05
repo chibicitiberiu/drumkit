@@ -81,7 +81,14 @@
                         Name="buttonEditMode"
                         Click="ButtonEditMode_Click"
                         Style="{StaticResource EditAppBarButtonStyle}" />
-                    
+
+                    <ToggleButton
+                        Name="buttonKeys"
+                        Click="buttonKeys_Click"
+                        AutomationProperties.Name="Show keys"
+                        IsChecked="True"
+                        Style="{StaticResource KeyboardAppBarButtonStyle}" />
+
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" >

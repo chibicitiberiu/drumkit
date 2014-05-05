@@ -9,13 +9,12 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid Name="grid" Background="Transparent"
-          PointerPressed="Grid_PointerPressed">
+    <Grid Background="Transparent">
 
         <VisualStateManager.VisualStateGroups>
-            
+
             <VisualStateGroup x:Name="DrumGroups">
-                
+
                 <VisualState x:Name="DrumNormal">
                     <Storyboard>
                         <DoubleAnimation Storyboard.TargetName="imagePressed"
@@ -35,7 +34,7 @@
                         </DoubleAnimation>
                     </Storyboard>
                 </VisualState>
-                
+
                 <VisualState x:Name="DrumHit">
                     <Storyboard>
                         <DoubleAnimation Storyboard.TargetName="imagePressed"
@@ -46,20 +45,44 @@
                                          Duration="0" To=".3" />
                     </Storyboard>
                 </VisualState>
-                
-                
+
+
             </VisualStateGroup>
-            
+
         </VisualStateManager.VisualStateGroups>
+
+
+        <Grid Name="grid" Background="Transparent"
+              PointerPressed="Grid_PointerPressed">
+
+            <Image Name="image" IsHitTestVisible="False"
+                   HorizontalAlignment="Stretch" 
+                   VerticalAlignment="Stretch" />
+
+            <Image Name="imagePressed" IsHitTestVisible="False"
+                   HorizontalAlignment="Stretch" 
+                   VerticalAlignment="Stretch" 
+                   Opacity="0" />
+        </Grid>
+
+
+        <TextBlock Name="textKeyShadow"
+                   Text="{Binding ElementName=textKey, Path=Text}"
+                   Style="{StaticResource TitleTextStyle}"
+                   Foreground="Black"
+                   IsHitTestVisible="False"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Center"
+                   Margin="2,0,0,13"
+                   Opacity="0.6" />
         
-        <Image Name="image" IsHitTestVisible="False"
-               HorizontalAlignment="Stretch" 
-               VerticalAlignment="Stretch" />
-
-        <Image Name="imagePressed" IsHitTestVisible="False"
-               HorizontalAlignment="Stretch" 
-               VerticalAlignment="Stretch" 
-               Opacity="0" />
-
+        <TextBlock Name="textKey" 
+                IsHitTestVisible="False"
+                Style="{StaticResource TitleTextStyle}"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center"
+                Margin="0,0,0,14"
+                Opacity="0.8" />
+        
     </Grid>
 </UserControl>

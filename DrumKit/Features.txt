@@ -1,5 +1,4 @@
-﻿Feature ideas:
-
+﻿Features:
 * drum hit intensity
 * audio effects (echo & stuff)
 * additional drum sets
@@ -8,3 +7,5 @@
 * z index in editor
 * recording
 * sequencer
+(UI) help
+(UI) improve layouts (retarget to 8.1)
